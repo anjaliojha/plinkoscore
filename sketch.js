@@ -69,7 +69,7 @@ pop()
   text("Score : "+score,20,30);
   Engine.update(engine);
 
- //text(mouseX+","+mouseY, mouseX, mouseY);
+ text(mouseX+","+mouseY, mouseX, mouseY);
   text("500 ",20,550);
   text("500 ",100,550);
   text("500 ",180,550);
@@ -101,24 +101,25 @@ pop()
 
       if (particle.body.position.y>760){
 
-      if(particle.body.position.x<315){
-        score = score +500;
+       if(particle.body.position.x<315){
+        score = score + 500;
         particle  =  null;
         if(turn>=5){gameState = "end";}
-      }
-
-      if(particle.body.position.x>315 && particle.body.position.x<550){
-        score = score +100;
-        particle  =  null;
-        if(turn>=5){gameState = "end";}
-
-      }
-        if(particle.body.position.x<550 && particle.body.position.x<800){
-          score = score +200;
-          particle  =  null;
-          if(turn>=5){gameState = "end";}
-      
         }
+
+     else if(particle.body.position.x>315 && particle.body.position.x<550){
+        score = score + 100;
+        particle  =  null;
+        if(turn>=5){gameState = "end";}
+
+      }
+
+      else if(particle.body.position.x>560 && particle.body.position.x<800){
+        score = score + 200;
+        particle  =  null;
+        if(turn>=5){gameState = "end";}
+
+      }
 
     }
     }
